@@ -15,14 +15,11 @@ const countLarger = arr => {
 
 const getThrees = arr => {
   // part 2
-  let copyArr = [...arr]
   let threes = []
   let counter = 0
 
   while (counter + 2 < arr.length) {
-    threes.push(
-      copyArr.slice(counter, counter + 3).reduce((a, v) => (a += v), 0)
-    )
+    threes.push(arr.slice(counter, counter + 3).reduce((a, v) => (a += v), 0))
     counter++
   }
   return countLarger(threes)
